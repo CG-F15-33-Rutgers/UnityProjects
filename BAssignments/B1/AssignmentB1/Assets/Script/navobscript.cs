@@ -32,7 +32,7 @@ public class navobscript : MonoBehaviour {
             {
                 foreach (Rigidbody i in obstacles)
                 {
-                    if (hit.rigidbody.Equals(i))
+                    if (hit.rigidbody != null && hit.rigidbody.Equals(i))
                     {
                         selected = i;
                     }
@@ -44,25 +44,25 @@ public class navobscript : MonoBehaviour {
     // Rigidbody movement physics
     void FixedUpdate()
     {
-        
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        float moveTurn;
-        if (Input.GetButton("Jump"))
+        if (selected != null)
         {
-            moveTurn = 10;
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            float moveTurn;
+            if (Input.GetButton("Jump"))
+            {
+                moveTurn = 10;
+            }
+            else
+            {
+                moveTurn = 0;
+            }
+
+            Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
+            Vector3 turn = new Vector3(0, moveTurn, 0);
+            selected.AddForce(movement * speed);
+            selected.AddTorque(turn);
         }
-        else
-        {
-            moveTurn = 0;
-        }
-        
-        Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
-        Vector3 turn = new Vector3(0, moveTurn, 0);
-        selected.AddForce(movement * speed);
-        selected.AddTorque(turn);
-        
-        
 
     }
 
