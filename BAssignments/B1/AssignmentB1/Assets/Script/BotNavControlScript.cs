@@ -67,7 +67,14 @@ public class BotNavControlScript : MonoBehaviour
         
         anim.SetFloat("Speed", v);
         anim.SetFloat("Direction", h);
-        anim.speed = animSpeed;                                 // set the speed of our animator to the public variable 'animSpeed'
+        if (nav.isOnOffMeshLink)
+        {
+            anim.speed = 3.0f;
+        }
+        else
+        {
+            anim.speed = animSpeed;
+        }// set the speed of our animator to the public variable 'animSpeed'
         currentBaseState = anim.GetCurrentAnimatorStateInfo(0); // set our currentState variable to the current state of the Base Layer (0) of animation
 
         // toggle run boolean
@@ -89,6 +96,10 @@ public class BotNavControlScript : MonoBehaviour
         if (currentBaseState.fullPathHash == walkState || currentBaseState.fullPathHash == runState)
         {
             if (Input.GetButtonDown("Jump"))
+            {
+                anim.SetBool("Jump", true);
+            }
+            if (nav.isOnOffMeshLink)
             {
                 anim.SetBool("Jump", true);
             }

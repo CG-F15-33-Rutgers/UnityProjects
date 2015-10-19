@@ -37,17 +37,17 @@ public class GameMenuController : MonoBehaviour
 
     void LoadPartOne()
     {
-        Application.LoadLevel("AssignmentB1");
+        Application.LoadLevel("Part1");
     }
     
     void LoadPartTwo()
     {
-        Application.LoadLevel("AssignmentB1");
+        Application.LoadLevel("Part2");
     }
     
     void LoadPartThree()
     {
-        Application.LoadLevel("AssignmentB1");
+        Application.LoadLevel("Part3");
     }
 }
 
