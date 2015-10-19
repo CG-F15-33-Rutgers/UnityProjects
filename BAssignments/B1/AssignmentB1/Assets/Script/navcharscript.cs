@@ -54,7 +54,7 @@ public class navcharscript : MonoBehaviour {
                 }
             }
         }
-		if (Input.GetMouseButtonDown (1))
+        if (Input.GetButtonDown("Fire2"))
 		{
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
