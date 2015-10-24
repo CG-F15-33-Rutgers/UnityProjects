@@ -1,7 +1,7 @@
 #Group 33
 ######Unity Projects - CG Fall 2015 @ Rutgers
 ######By: *Nicholas Pinilla, Michael Jiao, Robert Fidler, James Lee*
-Check out our website: [Group 33 Website](http://cg-f15-33-rutgers.github.io/UnityProjects_Deploy/ "Blog/Playable Builds")
+Check out our blog: [Group 33 Blog](http://cg-f15-33-rutgers.blogspot.com/ "Blog/Playable Builds")
 
 ![alt text](teamLogo.png)
 
